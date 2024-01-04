@@ -311,7 +311,9 @@ a:hover {
     display: block;
 }
 
-
+.hidden {
+    display: none;
+}
 
 @media screen and (max-width: 1000px) {
     .paragraphe {
