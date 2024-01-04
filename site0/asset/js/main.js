@@ -25,9 +25,10 @@ contactbtns.forEach(contactbtn => {
 
 
 document.addEventListener("DOMContentLoaded", function() {
+    document.querySelector(".flexslider").classList.add("hidden");
     document.querySelector(".firstanimation").classList.add("animate");
-
     setTimeout(function() {
+        document.querySelector(".flexslider").classList.remove("hidden");
         document.querySelector(".firstanimation").style.display = "none";
     }, 5000);
 });
