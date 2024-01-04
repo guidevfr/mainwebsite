@@ -327,6 +327,9 @@ a:hover {
         margin-bottom: 2rem;
 
     }
+    .titre {
+        margin:0;
+    }
    .un {
        display: none;
    }
