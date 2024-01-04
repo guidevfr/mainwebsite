@@ -21,3 +21,13 @@ contactbtns.forEach(contactbtn => {
         page2.style.display = 'block';
     });
 });
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    document.querySelector(".firstanimation").classList.add("animate");
+
+    setTimeout(function() {
+        document.querySelector(".firstanimation").style.display = "none";
+    }, 5000);
+});
