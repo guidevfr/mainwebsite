@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="asset/css/style.css">
+    <title>PASTA</title>
+</head>
+<body>
+<header id="masthead">
+    <div class="wrap">
+        <a href="index.php"><img src="asset/img/logo.png" alt="accueil"></a>
+        <nav>
+            <ul>
+                <li><a href="index.php"><i class="fa-solid fa-house"></i><p>Accueil</p></a></li>
+                <li><a href="menu.php"><i class="fa-solid fa-utensils"></i><p>Nos menus</p></a></li>
+                <li><a href="history.php"><i class="fa-solid fa-book"></i><p>Notre histoire</p></a></li>
+                <li><a href="inscription.php"><i class="fa-regular fa-user"></i><p>S'inscrire</p></a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="menuBar">
+        <div class="menuBurger" style="position: fixed; z-index: 1">
+            <i id="menuBar" class="fa-solid fa-bars" style="font-size: 30px"></i>
+            <i id="closeIcon" class="fa-solid fa-times noshow" style="font-size: 34px;color: var(--darkGreen)"></i>
+            <a href="index.php"><img src="asset/img/logo.png" alt="accueil"></a>
+            <a href="inscription.php"><i class="fa-regular fa-user" style="font-size: 30px;color: var(--darkGreen)"></i></a>
+            <ul class="menubarcontent">
+                <li><a href="index.php"><p>Accueil</p></a></li>
+                <li><a href="menu.php"><p>Nos menus</p></a></li>
+                <li><a href="history.php"><p>Notre histoire</p></a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="myModal" class="modal">
+        <div class="wrap4">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="contactblocmain">
+                    <div class="contactbloc1">
+                        <p>Une question ? Nous sommes là pour vous </p>
+                    </div>
+                    <div class="contactbloc2">
+                        <h1>Nous contacter</h1>
+                        <form action="" method="post" id="contactForm">
+                            <input type="text" name="name" placeholder="Nom..." value="<?php getPostValue('name'); ?>">
+                            <span class="error"><?php viewError($errors,'name'); ?></span>
+                            <input type="text" name="surname" placeholder="Prénom..." value="<?php getPostValue('surname'); ?>">
+                            <span class="error"><?php viewError($errors,'surname'); ?></span>
+                            <input type="email" name="email" placeholder="Email..." value="<?php getPostValue('email'); ?>">
+                            <span class="error"><?php viewError($errors,'email'); ?></span>
+                            <textarea name="message" id="" cols="30" rows="10" placeholder="Votre message..."><?php getPostValue('message'); ?></textarea>
+                            <span class="error"><?php viewError($errors,'message'); ?></span>
+                            <input type="submit" name="submitedcontact" value="Envoyer">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</header>
+
+
+
+<div id="pageindex1">
+    <div class="wrap0">
+        <img src="asset/img/homepasta.png" alt="Accueil image pate">
+        <div class="pageindex1bloc">
+            <p>Pasta, goûtez nos pâtes fait maison</p>
+            <h1>La qualité, <br>au meilleur prix</h1>
+            <a class="btn yellow" href="menu.php">Commandez maintenant</a>
+        </div>
+    </div>
+
+</div>
+    <div class="wrap0">
+        <div class="bande1">
+            <h2>PLUS BESOIN D’ACHETER DE BILLET VERS L’ITALIE, GOUTEZ NOS PRODUITS</h2>
+        </div>
+    </div>
+<div id="pageindex2" class="wrap0">
+        <h1>NOS ENGAGEMENTS</h1>
+        <div class="pageindex2bloc">
+            <div class="pageindex2blocimage">
+                <p>Un moment de détente</p>
+                <img src="asset/img/relax.png" alt="moment de détente">
+            </div>
+            <div class="pageindex2blocimage">
+                <p>Des pâtes fraîches ou rien</p>
+                <img src="asset/img/authentique.png" alt="pâtes authentiques">
+            </div>
+        </div>
+</div>
+    <div id="informationsbanner" class="wrap0">
+            <ul>
+                <li><i class="fa-solid fa-location-pin"></i><p>Implanté dans 5 pays</p></li>
+                <li><i class="fa-regular fa-handshake"></i><p>Des fournisseurs bio</p></li>
+                <li><i class="fa-regular fa-face-smile"></i><p>4,5/5 d’avis positifs</p></li>
+            </ul>
+    </div>
+<div id="pageindex3" class="wrap2">
+        <h1>VOS AVIS COMPTENT</h1>
+        <div class="pageindex3contain">
+            <div class="avis">
+                <p>Sylvain C.</p>
+                <p>Je vous conseille les  Prestop ! </p>
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+            </div>
+            <div class="avis">
+                <p>Sylvain C.</p>
+                <p>Je vous conseille les  Prestop ! </p>
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+            </div>
+            <div class="avis">
+                <p>Sylvain C.</p>
+                <p>Je vous conseille les  Prestop ! </p>
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+            </div>
+            <div class="avis">
+                <p>Sylvain C.</p>
+                <p>Je vous conseille les  Prestop ! </p>
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+            </div>
+        </div>
+</div>
+
+
+
+
+
+
+<footer id="footermain">
+    <div class="wrap">
+        <div class="footerbloc1">
+            <p>Réjoignez-nous !</p>
+            <div class="socialNetworkIcon">
+                <ul>
+                    <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-x-twitter"></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footerbloc2">
+            <ul>
+                <li><p>© PASTA, France</p></li>
+                <li><a  href="contact.php">Contact</a></li>
+                <li><a href="mentions.php">Mentions légales</a></li>
+            </ul>
+        </div>
+    </div>
+    <p class="cinqfruitsetlegumes">Pour votre santé, mangez au moins cinq fruits et légumes par jour. www.mangerbouger.fr</p>
+    <div class="loader"></div>
+</footer>
+</body>
+<script src="asset/js/main.js"></script>
+</html>
