@@ -1,0 +1,792 @@
+/* RESET */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+input[type="submit"]:hover {
+    cursor: pointer;
+}
+
+
+/* SPINNER */
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    transition: opacity 0.75s, visibility 0.75s;
+}
+.loaderHidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader::after {
+    content: "";
+    width: 75px;
+    height: 75px;
+    border: 15px solid var(--yellow);
+    border-top-color: var(--darkGreen);
+    border-radius: 50%;
+    animation: loading 0.75s ease infinite;
+}
+
+
+
+@keyframes loading {
+    from {
+        transform: rotate(0turn);
+    }
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+/* WRAP */
+.wrap0 {width: 100%;max-width: 1440px;margin: 0 auto}
+.wrap {width: 100%; max-width: 1200px; margin: 0 auto}
+.wrap2 {width: 100%; max-width: 1150px; margin: 0 auto}
+.wrap3 {width: 100%; max-width: 1000px; margin: 0 auto}
+.wrap4 {width: 100%; max-width: 950px; margin: 0 auto}
+
+
+/* POLICE DECLARATION */
+@font-face {
+    font-family: 'Nunito';
+    src: url('../font/Nunito-VariableFont_wght.ttf') format('ttf'),
+    url('../font/Nunito-Italic-VariableFont_wght.ttf') format('ttf');
+}
+
+input {
+    font-family: Nunito, sans-serif;
+    font-size: 18px;
+    color: var(--darkGreen);
+}
+
+/* VARIABLES */
+:root {
+    --darkGreen:#214001;
+    --lightGreen:#7CB343;
+    --yellow:#FFF27F;
+}
+
+
+body {
+    font-family: "Nunito", sans-serif;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+}
+
+.btn {
+    padding: 1rem;
+    border-radius: 50px;
+
+}
+
+.btn.yellow {
+    border: 3px solid var(--yellow);
+    transition: 1s;
+}
+
+.btn.yellow:hover {
+    background-color: var(--yellow);
+    color: black;
+}
+.btn.green {
+    border: 3px solid var(--darkGreen);
+    transition: 1s;
+}
+#inscription input[type="submit"], #connexion input[type="submit"] {
+    transition: 1s;
+}
+
+#inscription input[type="submit"]:hover, #connexion input[type="submit"]:hover, .btn.green:hover {
+    background-color: var(--darkGreen);
+    color: var(--yellow)!important;
+}
+.fa-facebook {
+    transition: 0.6s;
+}
+.fa-facebook:hover {
+    color: #0966FF;
+}
+.fa-x-twitter{
+    transition: 0.6s;
+}
+
+
+.fa-instagram {
+    transition: 0.6s;
+}
+.fa-instagram:hover {
+    color: #F50DBB;
+}
+
+
+#masthead {
+    padding: 1rem;
+    margin-bottom: 8rem;
+    box-shadow: 5px 5px 7px 5px rgba(0,0,0,0.2);
+
+}
+#masthead .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#masthead .wrap li > * {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--darkGreen);
+    gap: 0.6rem;
+    font-weight: bold;
+}
+
+#masthead a {
+    position: relative;
+    display: block;
+    text-decoration: none;
+}
+
+#masthead ul a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color:var(--darkGreen);
+    transition: opacity 300ms, transform 300ms;
+    opacity: 1;
+    transform: scale(0);
+    transform-origin: center;
+}
+
+#masthead a:hover::after {
+    transform: scale(1);
+}
+#masthead img {
+    width: 100px;
+}
+
+#masthead nav ul {
+    gap: 2rem;
+    display: flex;
+}
+
+/* Menu burger */
+
+
+
+.menuBar {
+    display: none;
+}
+.menuBurger{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 135px;
+    overflow: hidden;
+    background-color: white;
+    top: 0;
+    left: 0;
+    box-shadow: 5px 5px 7px 5px rgba(0,0,0,0.2);
+
+}
+
+.menuBurger ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.menuBurger ul li {
+
+    padding: 1rem;
+    width: 200px;
+}
+.menuBurger ul li a {
+    color: var(--darkGreen);
+    display: inline;
+}
+.menuBurger ul li p {
+    display: inline;
+}
+
+.menuBurger li >* {
+    display: flex;
+}
+.menuBurger li i {
+    margin-right: 1rem;
+}
+
+.menuBurger a {
+    display: inline!important;
+}
+
+
+.menubarcontent {
+    position: fixed;
+    top: -2000px;
+    z-index: 2;
+    background-color: white;
+    width: 100vw;
+    text-align: center;
+    padding: 3rem 0;
+    height: 100vh;
+    transition: 0.5s;
+    transition-timing-function: cubic-bezier(.36,.35,.77,.72);
+
+}
+.showmenubarcontent {
+    top:135px;
+}
+.noshow{
+    display: none;
+}
+
+#pageindex1 .wrap0 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.pageindex1bloc{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 29px;
+    position: absolute;
+    top: 50%;
+    left: 150px;
+    font-weight: bold;
+    transform: translateY(-50%);
+}
+.pageindex1bloc p{
+    color: var(--yellow);
+}
+.pageindex1bloc h1, a {
+    color: white;
+}
+
+.bande1 {
+    background-color: var(--darkGreen);
+    padding: 6rem;
+    text-align: center;
+    color: white;
+    margin-top: 10rem;
+}
+
+#pageindex2 {
+    padding: 10rem;
+    text-align: center;;
+}
+#pageindex2 h1 {
+    margin-bottom: 6rem;
+    color: var(--darkGreen);
+    text-decoration: underline;
+}
+
+
+.pageindex2bloc {
+    display: flex;
+    justify-content: space-between;
+}
+.pageindex2blocimage {
+    position: relative;
+}
+.pageindex2blocimage img {
+    border: 3px solid var(--lightGreen);
+    border-radius: 50%;
+}
+.pageindex2blocimage p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+    font-weight: bold;
+}
+
+
+#informationsbanner {
+    color: var(--yellow);
+    background-color: var(--darkGreen);
+    font-size: 20px;
+    padding: 5rem 0;
+}
+#informationsbanner ul {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+#informationsbanner i {
+    font-size: 2rem;
+    padding-bottom: 2rem;
+}
+
+
+#pageindex3 {
+
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+}
+
+#pageindex3 h1 {
+    margin-bottom: 8rem;
+}
+
+.pageindex3contain{
+    display: flex;
+    justify-content: space-between;
+    animation: scroll 20s linear infinite;
+    width: 100%;
+}
+.avis {
+    border-radius: 10px;
+    text-align: center;
+    line-height: 45px;
+    padding: 20px;
+    box-shadow: 5px 5px 7px 5px rgba(0,0,0,0.2);
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+
+}
+.avis p {
+    color:black;
+}
+        @keyframes scroll {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+#footermain {
+    background-color: var(--darkGreen);
+    padding: 5rem 0;
+    position: relative;
+
+
+}
+
+#footermain .wrap {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.socialNetworkIcon ul {
+    display: flex;
+    gap: 1rem;
+    font-size: 2rem;
+}
+
+.footerbloc1 {
+    color: white;
+}
+.footerbloc1 p {
+    margin-bottom: 2rem;
+}
+.footerbloc2 ul {
+    display: flex;
+    gap: 8rem;
+    color: white;
+}
+
+.cinqfruitsetlegumes {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+}
+
+
+
+/* page histoire */
+
+#history .wrap4{
+    box-shadow: 5px 5px 7px 5px rgba(0,0,0,0.2);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: justify;
+    margin: 4rem auto;
+
+
+}
+#history h1 {
+    margin-bottom: 4rem;
+}
+#history img {
+    margin-top: 3rem;
+}
+
+
+
+/* page mentions légales */
+#mentions h3 {
+    margin-top: 4rem;
+    margin-bottom: 1rem;
+
+}
+#mentions {
+    text-align: justify;
+    margin: 10rem auto;
+    padding: 1rem;
+}
+
+
+
+/* page menu description*/
+#menus {
+    text-align: center;
+    margin-top: 4rem;
+    margin-bottom: 10rem;
+
+
+}
+.menu {
+    display: flex;
+    margin-bottom: 8rem;
+    border: 1px solid var(--darkGreen);
+}
+
+
+.green .menudescription {
+    background-color: var(--darkGreen);
+    color: white;
+}
+
+#menus .yellow .menudescription {
+    background-color: var(--yellow);
+    color: var(--darkGreen);
+}
+#menus .yellow a {
+    color: var(--darkGreen);
+}
+
+
+#menus img {
+    width: 62%;
+}
+#menus h1 {
+    margin-bottom: 3rem;
+}
+.slogan {
+    margin-bottom: 8rem;
+}
+#menus h4 {
+    font-size: 30px;
+}
+#menus p {
+    font-size: 19px;
+}
+#menus a{
+    font-size: 20px;
+}
+.menudescription {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    width: 38%;
+}
+
+.inscriptionmainbloc, .connexionmainbloc, .contactblocmain{
+    display: flex;
+    border: 1px solid var(--yellow);
+    margin: 10rem auto;
+
+
+}
+.ordermainbloc {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+    font-size: 35px;
+    text-align: center;
+    align-items: center;
+    color: var(--darkGreen);
+    background-color: white;
+    height: 100vh;
+    width: 100vw;
+
+}
+#connexion {
+    margin-bottom: 10rem;
+}
+
+.inscriptionmainbloc h1, .connexionmainbloc h1, .contactblocmain h1 {
+    margin-bottom: 2rem;
+}
+
+.inscriptionbloc1, .contactbloc1, .connectionbloc2 {
+    background-color: var(--yellow);
+    padding: 3rem;
+    width: 50%;
+    font-size: 35px;
+    text-align: center;
+    color: var(--darkGreen);
+    display: flex;
+    align-items: center;
+}
+
+.inscriptionbloc2, .connectionbloc1, .contactbloc2{
+    padding: 3rem;
+    width: 50%;
+    text-align: center;
+    background-color: white;
+
+
+}
+.inscriptionbloc2 a {
+    color: var(--darkGreen);
+}
+.inscriptionbloc2 form,.connectionbloc1 form, .contactbloc2 form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inscriptionbloc2 input, .connectionbloc1 input, .contactbloc2 input {
+    padding: 1rem;
+    margin: 0.5rem auto;
+    border-radius: 25px;
+    border: 1px solid var(--darkGreen);
+    width: 80%;
+}
+.inscriptionbloc2 input[type="submit"], .connectionbloc1 input[type="submit"], .contactbloc2 input[type="submit"] {
+    width: 50%;
+    background-color: white;
+    font-size: 18px;
+    margin-top: 2rem;
+}
+
+.inscriptionbloc2 ::placeholder, .connectionbloc1 ::placeholder,.contactbloc2 ::placeholder {
+    font-size: 18px;
+}
+.contactblocmain textarea {
+    resize: none;
+    border-radius: 25px;
+    width: 80%;
+    margin-top: 0.5rem;
+    font-size: 18px;
+    padding: 0.5rem;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.close {
+    color: var(--darkGreen);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    right: 2rem;
+    top: 11rem;
+}
+.modal-content {
+    position: relative;
+}
+
+
+
+
+#orderModal {
+    display: none;
+    overflow: hidden;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+@media screen and (max-width: 1200px) {
+    .pageindex3contain {
+        animation: none;
+    }
+    #pageindex1  .wrap0 {
+        max-width: 1400px;
+        width: initial;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .pageindex3contain {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .avis {
+        width: 43%;
+        margin: 2rem;
+    }
+    .pageindex2bloc {
+        flex-direction: column;
+    }
+    .pageindex2bloc> *{
+        margin-bottom: 3rem;
+    }
+
+}
+
+@media screen and (max-width: 965px) {
+    #masthead .wrap {
+        display: none;
+    }
+    .menuBar {
+        display: block;
+        cursor: pointer;
+    }
+    .menu {
+        flex-direction: column;
+        width: 80%;
+        margin: 0 auto;
+        margin-bottom: 5rem;
+
+    }
+    #menus .slogan {
+        margin-bottom: 4rem;
+    }
+
+    #menus img {
+        width: 100%;
+    }
+    .menudescription {
+        width: 100%;
+
+    }
+
+    .menu.yellow img {
+        order: 1;
+    }
+    .menu.yellow .menudescription {
+        order: 2;
+    }
+    .menudescription > *{
+        padding-bottom: 2rem;
+    }
+    .menudescription a{
+        padding: 1rem;
+    }
+    #pageindex2 {
+        padding: 2rem;
+    }
+    .pageindex1bloc {
+        left: 50%;
+        transform: translateX(-50%);
+        top: 32%;
+        backdrop-filter: blur(8px);
+        padding: 2rem;
+        border-radius: 20px;
+        align-items: center;
+        border: 1px solid var(--yellow);
+        width: 80%;
+    }
+
+    .contactblocmain, .inscriptionmainbloc, .connexionmainbloc {
+        border: none;
+    }
+    .contactbloc1, .inscriptionbloc1, .connectionbloc2 {
+        display: none;
+    }
+    .contactbloc2, .inscriptionbloc2, .connectionbloc1{
+        width: 100%;
+    }
+    .inscriptionmainbloc, .connexionmainbloc {
+        margin: 4rem auto;
+    }
+
+
+    #footermain .wrap {
+        flex-direction: column;
+    }
+    .footerbloc2 {
+        margin: 3rem auto;
+    }
+    .footerbloc2 ul {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+}
+@media screen and (max-width:680px) {
+    .menu {
+        width: 90%;
+    }
+    .avis {
+        width: 78%;
+        margin: 2rem;
+    }
+    .pageindex2blocimage img {
+        width: 300px;
+    }
+    .informationsbanner ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    .informationsbanner ul li {
+        margin-bottom: 3rem;
+    }
+    .bande1 {
+        padding: 2rem;
+    }
+    #pageindex3 h1 {
+        margin-bottom: 3rem;
+    }
+    .pageindex1bloc {
+        top: 27%;
+    }
+}
