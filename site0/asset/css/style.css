@@ -52,13 +52,17 @@ a {
     align-items: center;
     padding: 1rem;
 }
-#masthead ul li img {
+#masthead ul li a {
     width: 40px;
     filter: brightness(9.5);
     transition:0.8s
 }
+#masthead ul li img {
+    filter: brightness(9.5);
+    transition:0.8s
+}
 #masthead ul li img:hover {
-    transform: scale(1.1); 
+    transform: scale(1.1);
 }
 
 .gd {
