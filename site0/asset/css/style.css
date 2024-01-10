@@ -58,7 +58,7 @@ a {
     transition:0.8s
 }
 #masthead ul li img:hover {
-    scale(1,2)
+    transform: scale(1.1); 
 }
 
 .gd {
