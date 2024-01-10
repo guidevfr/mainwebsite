@@ -55,6 +55,10 @@ a {
 #masthead ul li img {
     width: 40px;
     filter: brightness(9.5);
+    transition:0,8s
+}
+#masthead ul li img:hover {
+    transform:scale(1,2)
 }
 
 .gd {
