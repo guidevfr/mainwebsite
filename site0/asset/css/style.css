@@ -53,16 +53,14 @@ a {
     padding: 1rem;
 }
 #masthead ul li a {
-    width: 40px;
-    filter: brightness(9.5);
-    transition:0.8s
+        transition:0.8s
 }
 #masthead ul li img {
     filter: brightness(9.5);
-    transition:0.8s
+    width: 40px;
 }
-#masthead ul li img:hover {
-    transform: scale(1.1);
+#masthead ul li a:hover {
+       transform: scale(1.1);
 }
 
 .gd {
