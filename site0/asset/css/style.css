@@ -52,16 +52,12 @@ a {
     align-items: center;
     padding: 1rem;
 }
-#masthead ul li a {
-        transition:0.8s
-}
+
 #masthead ul li img {
     filter: brightness(9.5);
     width: 40px;
 }
-#masthead ul li a:hover {
-       transform: scale(1.1);
-}
+
 
 .gd {
     font-size: 3rem;
