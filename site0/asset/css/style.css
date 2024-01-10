@@ -53,7 +53,8 @@ a {
     padding: 1rem;
 }
 #masthead ul li img {
-    width: 130px;
+    width: 40px;
+    filter: brightness(9.5);
 }
 
 .gd {
